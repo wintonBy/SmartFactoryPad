@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RadioGroup
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="match_parent">
+        <RadioButton
+            android:padding="5dp"
+            android:checked="true"
+            android:textColor="@color/index_radio_text_color"
+            android:button="@null"
+            android:text="@string/sign_in"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <RadioButton
+            android:padding="5dp"
+            android:textColor="@color/index_radio_text_color"
+            android:button="@null"
+            android:text="@string/work_data"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <RadioButton
+            android:padding="5dp"
+            android:textColor="@color/index_radio_text_color"
+            android:button="@null"
+            android:text="@string/device"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <RadioButton
+            android:padding="5dp"
+            android:textColor="@color/index_radio_text_color"
+            android:button="@null"
+            android:text="@string/call"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+    </RadioGroup>
+    <View
+        android:background="@color/colorPrimary"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"/>
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+</LinearLayout>

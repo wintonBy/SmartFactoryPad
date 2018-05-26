@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">APPFram</string>
+
+    <string name="sign_in">打卡</string>
+    <string name="work_data">工况</string>
+    <string name="device">设备</string>
+    <string name="call">呼叫</string>
+</resources>
