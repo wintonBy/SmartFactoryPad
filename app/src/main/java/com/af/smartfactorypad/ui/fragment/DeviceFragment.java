@@ -6,6 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.af.smartfactorypad.R;
+
+import butterknife.ButterKnife;
+
 /**
  * @author: winton
  * @time: 2018/5/26 15:05
@@ -27,6 +31,8 @@ public class DeviceFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view = inflater.inflate(R.layout.frag_device,null);
+        ButterKnife.bind(this,view);
+        return view;
     }
 }

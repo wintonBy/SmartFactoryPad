@@ -46,9 +46,49 @@
         android:background="@color/colorPrimary"
         android:layout_width="1dp"
         android:layout_height="match_parent"/>
-    <FrameLayout
-        android:id="@+id/fl_content"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <ImageView
+                android:scaleType="fitStart"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <TextView
+                android:text="@string/app_name"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_date"
+                android:textSize="@dimen/text_x_normal"
+                android:gravity="bottom"
+                android:text="2018年5月26日"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:textSize="@dimen/text_xx_big"
+                android:paddingLeft="10dp"
+                android:gravity="bottom"
+                android:text="22:04:04"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>
