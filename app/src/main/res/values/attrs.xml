@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InputEditText">
+        <attr name="edit_size" format="dimension"/>
+        <attr name="input_num" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -1,56 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:background="@color/page_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RadioGroup
+        android:background="#26365A"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/rg"
         android:orientation="vertical"
         android:layout_width="100dp"
         android:layout_height="match_parent">
         <RadioButton
+            android:id="@+id/rb_sign"
             android:padding="5dp"
-            android:checked="true"
-            android:textColor="@color/index_radio_text_color"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_x_big"
             android:button="@null"
+            android:background="@drawable/shape_circle_bt_bg"
             android:text="@string/sign_in"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
         <RadioButton
+            android:id="@+id/rb_work"
             android:padding="5dp"
-            android:textColor="@color/index_radio_text_color"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_x_big"
             android:button="@null"
+            android:background="@drawable/shape_circle_bt_bg"
             android:text="@string/work_data"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
         <RadioButton
+            android:id="@+id/rb_device"
             android:padding="5dp"
-            android:textColor="@color/index_radio_text_color"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_x_big"
             android:button="@null"
+            android:background="@drawable/shape_circle_bt_bg"
             android:text="@string/device"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"/>
         <RadioButton
+            android:id="@+id/rb_call"
             android:padding="5dp"
-            android:textColor="@color/index_radio_text_color"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_x_big"
             android:button="@null"
+            android:background="@drawable/shape_circle_bt_bg"
             android:text="@string/call"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
 
     </RadioGroup>
-    <View
-        android:background="@color/colorPrimary"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"/>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
+            android:background="@android:color/white"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
             android:layout_width="match_parent"
@@ -84,6 +110,7 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
         <FrameLayout
+            android:layout_marginTop="5dp"
             android:id="@+id/fl_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></FrameLayout>

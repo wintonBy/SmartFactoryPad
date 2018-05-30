@@ -1,8 +1,15 @@
 <resources>
-    <string name="app_name">APPFram</string>
+    <string name="app_name">LKT智能工厂</string>
 
     <string name="sign_in">打卡</string>
     <string name="work_data">工况</string>
     <string name="device">设备</string>
     <string name="call">呼叫</string>
+    
+    <string name="call_manager">呼叫主管</string>
+    <string name="call_tech">呼叫技术</string>
+    <string name="call_logistics">呼叫物流</string>
+    <string name="call_quality">呼叫质量</string>
+    <string name="call_support">呼叫维修</string>
+    <string name="sign_tip">温馨提示：上班前请仔细检查车床运行情况，认真做好安全防护工作！</string>
 </resources>

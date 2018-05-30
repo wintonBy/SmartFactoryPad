@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/page_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_call"
+        android:background="@android:color/white"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:textColor="@android:color/white"
+            android:text="@string/call_manager"
+            android:background="@drawable/shape_bt_bg"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:text="@string/call_tech"
+            android:background="@drawable/shape_bt_bg"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:text="@string/call_logistics"
+            android:background="@drawable/shape_bt_bg"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:text="@string/call_quality"
+            android:background="@drawable/shape_bt_bg"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"/>
+        <Button
+            android:textColor="@android:color/white"
+            android:text="@string/call_support"
+            android:background="@drawable/shape_bt_bg"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:background="@android:color/white"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="@dimen/text_xx_big"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/call_state"
+            android:text="正在呼叫--"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textColor="@android:color/white"
+            android:text="取消呼叫"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_bt_bg"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

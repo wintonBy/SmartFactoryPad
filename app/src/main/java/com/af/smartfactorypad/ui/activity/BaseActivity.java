@@ -3,6 +3,7 @@ package com.af.smartfactorypad.ui.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
 import com.af.smartfactorypad.MyApplication;
 import com.af.smartfactorypad.mvp.IView;
@@ -14,7 +15,7 @@ import java.lang.ref.WeakReference;
  * Created by winton on 2017/6/22.
  */
 
-public abstract class BaseActivity<P extends BasePresenter> extends Activity implements IView {
+public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements IView {
 
     protected P mPresenter;
     protected WeakReference<Activity> mActivity;

@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="page_color">#F8F8F8</color>
+
+    <color name="button_uncheck">#89DDFF</color>
+    <color name="button_check">#117CB2</color>
+    
+    <color name="bt_normal_color">#548B54</color>
+    <color name="bt_press_color">#458B74</color>
+    <color name="tip_color">#FF0000</color>
+    <color name="normal_text_color">#2F4F4F</color>
 </resources>

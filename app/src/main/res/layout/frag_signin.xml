@@ -1,8 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:paddingLeft="60dp"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:textSize="@dimen/text_normal"
+            android:text="上班班次:--"
+            android:textColor="@color/normal_text_color"
+            android:id="@+id/tv_work_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/text_normal"
+            android:text="操作人员:--"
+            android:id="@+id/tv_worker_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/normal_text_color"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/text_normal"
+            android:text="工　　号:--"
+            android:id="@+id/tv_worker_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/normal_text_color"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/text_normal"
+            android:text="下班时间:--"
+            android:id="@+id/tv_work_over_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_sign"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/shape_bt_bg"
+        android:text="上班"
+        android:textColor="@android:color/white"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 
-</LinearLayout>
+    <TextView
+        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/text_x_normal"
+        android:id="@+id/tv_sign_tip"
+        android:textColor="@android:color/holo_red_light"
+        android:text="@string/sign_tip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

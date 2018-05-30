@@ -31,7 +31,7 @@ public class WorkDataFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_call,null);
+        View view = inflater.inflate(R.layout.frag_work_data,null);
         ButterKnife.bind(this,view);
         return view;
     }

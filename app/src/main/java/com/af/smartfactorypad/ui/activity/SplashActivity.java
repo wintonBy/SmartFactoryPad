@@ -30,6 +30,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 IndexActivity.start(SplashActivity.this);
+                SplashActivity.this.finish();
             }
         },2000);
     }
