@@ -18,7 +18,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar.FullScreen"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,14 +26,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.IndexActivity"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"
-            android:screenOrientation="landscape"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.activity.ProductChoseActivity"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"
-            android:screenOrientation="landscape"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ui.activity.WorkerStatisticsActivity"
-            android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 

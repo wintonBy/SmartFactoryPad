@@ -37,10 +37,6 @@ import butterknife.ButterKnife;
  */
 public class IndexActivity extends BaseActivity {
 
-    @BindView(R.id.tv_date)
-    TextView mTVDate;
-    @BindView(R.id.tv_time)
-    TextView mTVTime;
     @BindView(R.id.rg)
     RadioGroup mRG;
 
@@ -108,7 +104,6 @@ public class IndexActivity extends BaseActivity {
     protected void initData() {
         super.initData();
         mUIHandler = new UIHandler(this);
-        updateTime();
         fragments = new ArrayList<>();
         fragments.add(SignInFragment.newInstance(null));
         fragments.add(WorkDataFragment.newInstance(null));
@@ -117,21 +112,15 @@ public class IndexActivity extends BaseActivity {
         mRG.check(R.id.rb_sign);
     }
 
-    private void updateTime(){
-        mTVDate.setText(TimeUtils.getString(System.currentTimeMillis(), Constant.DATE_FORMAT ,0,0));
-        mTVTime.setText(TimeUtils.getString(System.currentTimeMillis(),Constant.TIME_FORMAT,0,0));
-    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        mUIHandler.sendEmptyMessageDelayed(UIHandlerId.UPDATE_TIME,1000);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mUIHandler.removeMessages(UIHandlerId.UPDATE_TIME);
     }
 
     @Override
@@ -150,12 +139,6 @@ public class IndexActivity extends BaseActivity {
 
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what){
-                case UIHandlerId.UPDATE_TIME:
-                    mActivity.get().updateTime();
-                    mUIHandler.sendEmptyMessageDelayed(UIHandlerId.UPDATE_TIME,1000);
-                    break;
-            }
             super.handleMessage(msg);
         }
     }
