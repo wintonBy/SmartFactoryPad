@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">LKT智能工厂</string>
+    <string name="app_slogan">专注，成就品质</string>
 
     <string name="sign_in">打卡</string>
     <string name="work_data">工况</string>

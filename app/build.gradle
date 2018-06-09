@@ -54,8 +54,8 @@ dependencies {
     /*工具类*/
     implementation 'com.blankj:utilcode:1.16.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    implementation 'com.github.glomadrian:CodeInput:1.1@aar'
+    /*二维码扫描库*/
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
 
 }
 repositories {

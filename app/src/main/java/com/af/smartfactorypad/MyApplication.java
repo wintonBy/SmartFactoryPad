@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 
 import com.af.smartfactorypad.aspectj.annotation.DebugTrace;
 import com.blankj.utilcode.util.Utils;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class MyApplication extends Application {
         super.onCreate();
         INSTANCE = this;
         initUtils();
-
+        ZXingLibrary.initDisplayOpinion(this);
     }
 
     /**

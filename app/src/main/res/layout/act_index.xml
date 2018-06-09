@@ -10,8 +10,12 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"></FrameLayout>
-
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
     <RadioGroup
+        android:background="@android:color/white"
         android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -26,19 +30,19 @@
         <RadioButton
             android:id="@+id/rb_work"
             style="@style/IndexBT"
-            android:drawableTop="@drawable/index_bt0_bg"
+            android:drawableTop="@drawable/index_bt1_bg"
             android:text="@string/work_data" />
 
         <RadioButton
             android:id="@+id/rb_device"
             style="@style/IndexBT"
-            android:drawableTop="@drawable/index_bt0_bg"
+            android:drawableTop="@drawable/index_bt2_bg"
             android:text="@string/device" />
 
         <RadioButton
             android:id="@+id/rb_call"
             style="@style/IndexBT"
-            android:drawableTop="@drawable/index_bt0_bg"
+            android:drawableTop="@drawable/index_bt3_bg"
             android:text="@string/call" />
 
     </RadioGroup>
