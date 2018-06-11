@@ -55,8 +55,7 @@ dependencies {
     implementation 'com.blankj:utilcode:1.16.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     /*二维码扫描库*/
-    compile 'cn.yipianfengye.android:zxing-library:2.2'
-
+    compile project(':zxing')
 }
 repositories {
     mavenCentral()

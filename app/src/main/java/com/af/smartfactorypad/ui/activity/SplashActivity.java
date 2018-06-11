@@ -1,7 +1,9 @@
 package com.af.smartfactorypad.ui.activity;
 
+import com.af.smartfactorypad.MyApplication;
 import com.af.smartfactorypad.R;
 import com.af.smartfactorypad.presenter.BasePresenter;
+import com.blankj.utilcode.util.PermissionUtils;
 
 /**
  * @author: winton
@@ -16,6 +18,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void initView() {
         setContentView(R.layout.act_splash);
+        MyApplication.permissionInstance.request();
     }
 
     @Override
@@ -29,7 +32,7 @@ public class SplashActivity extends BaseActivity {
         getWindow().getDecorView().postDelayed(new Runnable() {
             @Override
             public void run() {
-                IndexActivity.start(SplashActivity.this);
+                LoginActivity.start(SplashActivity.this);
                 SplashActivity.this.finish();
             }
         },2000);

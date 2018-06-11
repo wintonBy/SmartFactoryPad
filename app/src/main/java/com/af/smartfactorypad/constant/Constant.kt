@@ -14,4 +14,13 @@ object Constant{
     @JvmField  val  DATE_FORMAT = SimpleDateFormat("yyyy年MM月dd日");
 
     @JvmField val TIME_FORMAT = SimpleDateFormat("HH:mm:ss");
+
+    @JvmField val SP_TOKEN = "token"
+    @JvmField val SP_USER_NAME = "name"
+    @JvmField val SP_USER_GENDER = "gender"
+    @JvmField val SP_USER_PHONE = "phone"
+    @JvmField val SP_USER_USERNAME = "username"
+    @JvmField val SP_USER_IMG = "user_img"
+    @JvmField val SP_PASSWORD = "password"
+    @JvmField val SP_IS_FIRST_OPEN = "first_open"
 }

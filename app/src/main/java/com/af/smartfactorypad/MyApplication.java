@@ -1,12 +1,14 @@
 package com.af.smartfactorypad;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Application;
 import android.support.annotation.NonNull;
 
 import com.af.smartfactorypad.aspectj.annotation.DebugTrace;
+import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.Utils;
-import com.uuzuche.lib_zxing.activity.ZXingLibrary;
+import com.zxing.activity.ZXingLibrary;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -22,12 +24,15 @@ public class MyApplication extends Application {
 
     private List<WeakReference<Activity>> mActivitys;
 
+    public static PermissionUtils permissionInstance;
+
     @DebugTrace
     @Override
     public void onCreate() {
         super.onCreate();
         INSTANCE = this;
         initUtils();
+        initPermission();
         ZXingLibrary.initDisplayOpinion(this);
     }
 
@@ -54,6 +59,15 @@ public class MyApplication extends Application {
         if(mActivitys.contains(activity)){
             mActivitys.remove(activity);
         }
+    }
+
+    /**
+     * 初始化程序需要的权限
+     */
+    private void initPermission(){
+        permissionInstance = PermissionUtils.permission(Manifest.permission.CAMERA,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.VIBRATE);
     }
 
     /**

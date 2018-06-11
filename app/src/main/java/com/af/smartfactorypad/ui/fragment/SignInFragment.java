@@ -1,5 +1,7 @@
 package com.af.smartfactorypad.ui.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,6 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.af.smartfactorypad.R;
+import com.af.smartfactorypad.ui.activity.ScanActivity;
+import com.blankj.utilcode.util.PermissionUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.zxing.activity.CodeUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +41,7 @@ public class SignInFragment extends BaseFragment{
     @BindView(R.id.bt_sign)
     Button mBTSign;
 
-    private WorkNumInputFragment workNumDialog;
+    private static final int REQ_BIND = 0x0001;
 
     public static SignInFragment newInstance(Bundle params){
         SignInFragment fragment = new SignInFragment();
@@ -56,10 +62,18 @@ public class SignInFragment extends BaseFragment{
 
     @OnClick(R.id.bt_sign)
     public void clickSign(View v){
-        if(workNumDialog == null){
-            workNumDialog = new WorkNumInputFragment();
+        Intent intent = new Intent(getContext(),ScanActivity.class);
+        startActivityForResult(intent, REQ_BIND);
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQ_BIND && resultCode == Activity.RESULT_OK){
+            String str = data.getStringExtra(CodeUtils.RESULT_STRING);
+            ToastUtils.showShort(str);
         }
-        workNumDialog.show(getFragmentManager(),"workNumDialog");
     }
 
     /**
