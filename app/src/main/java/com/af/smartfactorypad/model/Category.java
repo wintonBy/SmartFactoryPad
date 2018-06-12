@@ -3,7 +3,6 @@ package com.af.smartfactorypad.model;
 import com.af.smartfactorypad.mvp.IModel;
 import com.af.smartfactorypad.network.BaseSubscriber;
 import com.af.smartfactorypad.network.RetrofitClient;
-import com.af.smartfactorypad.network.response.CategoryResponse;
 
 import java.util.List;
 

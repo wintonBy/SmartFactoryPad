@@ -2,6 +2,13 @@ package com.af.smartfactorypad.network;
 
 import android.text.TextUtils;
 
+import com.af.smartfactorypad.BuildConfig;
+import com.af.smartfactorypad.MyApplication;
+import com.franmontiel.persistentcookiejar.ClearableCookieJar;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 
@@ -50,6 +57,14 @@ public class RetrofitClient {
         if(TextUtils.isEmpty(url)){
             url = baseUrl;
         }
+        ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(),new SharedPrefsCookiePersistor(MyApplication.INSTANCE));
+        OkHttpClient.Builder builder = new OkHttpClient.Builder()
+                .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                .cookieJar(cookieJar);
+        if(BuildConfig.DEBUG){
+            builder.addInterceptor(new LoggerInterceptor("OKHttp"));
+        }
+
         mOkHttpClient = new OkHttpClient.Builder()
                         .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                         .build();

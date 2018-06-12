@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#4E90C2</color>
+    <color name="colorPrimaryDark">#4E90C2</color>
+    <color name="colorAccent">#4E90C2</color>
 
     <color name="page_color">#F8F8F8</color>
 
@@ -16,9 +16,7 @@
     <color name="tip_color">#FF0000</color>
     <color name="normal_text_color">#2F4F4F</color>
 
-    <color name="colorPrimary">#4E90C2</color>
-    <color name="colorPrimaryDark">#4E90C2</color>
-    <color name="colorAccent">#4E90C2</color>
+
 
     <color name="load_dialog_bg">#66000000</color>
     <color name="normal_color">#67BFCB</color>

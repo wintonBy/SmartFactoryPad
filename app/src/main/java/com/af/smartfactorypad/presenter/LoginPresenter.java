@@ -14,6 +14,6 @@ import com.af.smartfactorypad.ui.activity.LoginActivity;
 public class LoginPresenter extends BasePresenter<LoginActivity> implements LoginContract.Presenter {
     @Override
     public void doLogin() {
-
+        getView().doLoginSuccess();
     }
 }

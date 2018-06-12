@@ -10,7 +10,7 @@
         android:paddingRight="10dp"
         android:background="@mipmap/img_detail"
         android:layout_width="match_parent"
-        android:layout_height="140dp">
+        android:layout_height="100dp">
         <TextView
             android:id="@+id/page_name"
             android:textSize="@dimen/text_x_big"
@@ -40,60 +40,17 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_centerVertical="true"
-        android:orientation="vertical"
-        android:paddingLeft="60dp"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content">
-        <TextView
-
-            android:textSize="@dimen/text_normal"
-            android:text="上班班次:--"
-            android:textColor="@color/normal_text_color"
-            android:id="@+id/tv_work_num"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_marginTop="20dp"
-            android:textColor="@color/normal_text_color"
-            android:textSize="@dimen/text_normal"
-            android:text="操作人员:--"
-            android:id="@+id/tv_worker_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textColor="@color/normal_text_color"
-            android:layout_marginTop="20dp"
-            android:textSize="@dimen/text_normal"
-            android:text="工　　号:--"
-            android:id="@+id/tv_worker_num"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textColor="@color/normal_text_color"
-            android:layout_marginTop="20dp"
-            android:textSize="@dimen/text_normal"
-            android:text="下班时间:--"
-            android:id="@+id/tv_work_over_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
     <Button
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
         android:id="@+id/bt_sign"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="60dp"
         android:background="@drawable/shape_bt_bg"
-        android:text="上班"
+        android:text="扫码绑定"
         android:textColor="@android:color/white"
         android:layout_width="100dp"
         android:layout_height="100dp" />
 
-
     <TextView
-        android:layout_marginBottom="20dp"
         android:textSize="@dimen/text_small"
         android:id="@+id/tv_sign_tip"
         android:textColor="@android:color/holo_red_light"

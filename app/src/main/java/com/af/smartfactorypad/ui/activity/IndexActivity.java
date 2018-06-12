@@ -2,11 +2,16 @@ package com.af.smartfactorypad.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -16,6 +21,7 @@ import com.af.smartfactorypad.presenter.BasePresenter;
 import com.af.smartfactorypad.ui.fragment.CallFragment;
 import com.af.smartfactorypad.ui.fragment.DeviceFragment;
 import com.af.smartfactorypad.ui.fragment.SignInFragment;
+import com.af.smartfactorypad.ui.fragment.UserFragment;
 import com.af.smartfactorypad.ui.fragment.WorkDataFragment;
 import com.blankj.utilcode.util.TimeUtils;
 
@@ -63,6 +69,13 @@ public class IndexActivity extends BaseActivity {
     @Override
     protected void initView() {
         setContentView(R.layout.act_index);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+        }
         ButterKnife.bind(this);
         fm = getSupportFragmentManager();
     }
@@ -107,8 +120,8 @@ public class IndexActivity extends BaseActivity {
         fragments = new ArrayList<>();
         fragments.add(SignInFragment.newInstance(null));
         fragments.add(WorkDataFragment.newInstance(null));
-        fragments.add(DeviceFragment.newInstance(null));
         fragments.add(CallFragment.newInstance(null));
+        fragments.add(UserFragment.newInstance(null));
         mRG.check(R.id.rb_sign);
     }
 

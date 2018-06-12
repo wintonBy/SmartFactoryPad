@@ -1,7 +1,5 @@
 package com.af.smartfactorypad.network;
 
-import com.af.smartfactorypad.network.response.CategoryResponse;
-
 import java.util.Map;
 
 import io.reactivex.Flowable;
@@ -17,15 +15,11 @@ import retrofit2.http.QueryMap;
 
 public interface ServerApi {
 
-    public static final String BASE_URL = "http://gank.io/api/";
+    public static final String BASE_URL = "https://leadtotech.com/mes-cnc/";
 
     @GET("{url}")
     Flowable<ResponseBody> executeGet(@Path("url") String url, @QueryMap Map<String,String> params);
     @POST("{url}")
     Flowable<ResponseBody> executePost(@Path("url")String url ,@QueryMap Map<String,String> params);
 
-
-    /*声明一个接口*/
-    @GET("data/{category}/{count}/{page}")
-    Flowable<CategoryResponse> getCategory(@Path("category")String category, @Path("count")int count, @Path("page")int page);
 }

@@ -12,4 +12,12 @@
         >
     </FrameLayout>
 
+    <Button
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:id="@+id/bt_light_switch"
+        android:background="@mipmap/ic_light_off"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
 </FrameLayout>

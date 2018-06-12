@@ -30,14 +30,6 @@ import butterknife.OnClick;
  */
 public class SignInFragment extends BaseFragment{
 
-    @BindView(R.id.tv_work_num)
-    TextView mTVWorkNum;
-    @BindView(R.id.tv_worker_name)
-    TextView mTVWorkerName;
-    @BindView(R.id.tv_worker_num)
-    TextView mTVWorkerNum;
-    @BindView(R.id.tv_work_over_time)
-    TextView mTVWorkOverTime;
     @BindView(R.id.bt_sign)
     Button mBTSign;
 

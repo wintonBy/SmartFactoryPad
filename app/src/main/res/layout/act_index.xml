@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/page_color"
+    android:fitsSystemWindows="false"
     android:orientation="vertical">
 
     <FrameLayout
@@ -37,13 +38,13 @@
             android:id="@+id/rb_device"
             style="@style/IndexBT"
             android:drawableTop="@drawable/index_bt2_bg"
-            android:text="@string/device" />
+            android:text="@string/call" />
 
         <RadioButton
             android:id="@+id/rb_call"
             style="@style/IndexBT"
             android:drawableTop="@drawable/index_bt3_bg"
-            android:text="@string/call" />
+            android:text="@string/me" />
 
     </RadioGroup>
 

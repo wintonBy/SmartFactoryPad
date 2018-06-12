@@ -13,7 +13,6 @@ public class BasePresenter<V extends IView> implements IPresenter {
 
 
     private WeakReference actReference;  //activity 弱引言
-    protected  V iView;
 
 
     @Override
@@ -30,7 +29,7 @@ public class BasePresenter<V extends IView> implements IPresenter {
     }
 
     @Override
-    public IView getView() {
+    public V getView() {
         return (V)actReference.get();
     }
 

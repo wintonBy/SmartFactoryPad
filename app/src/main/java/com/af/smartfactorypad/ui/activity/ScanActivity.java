@@ -5,11 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.af.smartfactorypad.R;
 import com.af.smartfactorypad.presenter.BasePresenter;
 import com.zxing.activity.CaptureFragment;
 import com.zxing.activity.CodeUtils;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @author: winton
@@ -22,6 +28,10 @@ import com.zxing.activity.CodeUtils;
 public class ScanActivity extends BaseActivity {
 
     private CaptureFragment captureFragment;
+    @BindView(R.id.bt_light_switch)
+    Button mBTSwitch;
+
+    private boolean isOpenLight;
 
     /**
      * 启动扫码页
@@ -38,6 +48,26 @@ public class ScanActivity extends BaseActivity {
     @Override
     protected void initView() {
         setContentView(R.layout.act_scan);
+        ButterKnife.bind(this);
+        findViewById(R.id.iv_back).setVisibility(View.VISIBLE);
+    }
+
+    @OnClick(R.id.iv_back)
+    public void clickBack(View v){
+        this.finish();
+    }
+
+    @OnClick(R.id.bt_light_switch)
+    public void clickLightSwitch(View v){
+        if(isOpenLight){
+            CodeUtils.isLightEnable(false);
+            isOpenLight = false;
+            mBTSwitch.setBackground(getResources().getDrawable(R.mipmap.ic_light_off));
+        }else {
+            CodeUtils.isLightEnable(true);
+            mBTSwitch.setBackground(getResources().getDrawable(R.mipmap.ic_light_open));
+            isOpenLight = true;
+        }
     }
 
     @Override

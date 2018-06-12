@@ -23,4 +23,8 @@ object Constant{
     @JvmField val SP_USER_IMG = "user_img"
     @JvmField val SP_PASSWORD = "password"
     @JvmField val SP_IS_FIRST_OPEN = "first_open"
+
+    /*统一的版本号*/
+    @JvmField val VERSION_CODE = 20180502
+    @JvmField val APK_DOWNLOAD_NAME = "release.apk"
 }
