@@ -1,65 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@color/page_color"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/ll_call"
-        android:background="@android:color/white"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingRight="40dp"
-        android:paddingLeft="40dp"
-        android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/page_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_actionbar" />
+
+    <ImageView
+        android:id="@+id/iv_my_code"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:textColor="@android:color/white"
-            android:text="@string/call_manager"
-            android:background="@drawable/shape_bt_bg"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"/>
-        <Button
-            android:textColor="@android:color/white"
-            android:text="@string/call_tech"
-            android:background="@drawable/shape_bt_bg"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"/>
-        <Button
-            android:textColor="@android:color/white"
-            android:text="@string/call_logistics"
-            android:background="@drawable/shape_bt_bg"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"/>
-        <Button
-            android:textColor="@android:color/white"
-            android:text="@string/call_quality"
-            android:background="@drawable/shape_bt_bg"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="1dp"/>
-        <Button
-            android:textColor="@android:color/white"
-            android:text="@string/call_support"
-            android:background="@drawable/shape_bt_bg"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-    </LinearLayout>
+        android:layout_height="150dp" />
+
+    <View
+        style="@style/Setting_Item_Divider"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/call_manager"
+        style="@style/Setting_Item"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/ic_company"
+        android:drawablePadding="5dp"
+        android:text="@string/call_manager" />
+
+    <View style="@style/Setting_Item_Divider" />
+
+    <View
+        style="@style/Setting_Item_Divider"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/call_tech"
+        style="@style/Setting_Item"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/ic_company"
+        android:drawablePadding="5dp"
+        android:text="@string/call_tech" />
+
+    <View style="@style/Setting_Item_Divider" />
+
+    <View
+        style="@style/Setting_Item_Divider"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/call_logistics"
+        style="@style/Setting_Item"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/ic_company"
+        android:drawablePadding="5dp"
+        android:text="@string/call_logistics" />
+
+    <View style="@style/Setting_Item_Divider" />
+
+    <View
+        style="@style/Setting_Item_Divider"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/call_quality"
+        style="@style/Setting_Item"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/ic_company"
+        android:drawablePadding="5dp"
+        android:text="@string/call_quality" />
+
+    <View style="@style/Setting_Item_Divider" />
+
+    <View
+        style="@style/Setting_Item_Divider"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/call_support"
+        style="@style/Setting_Item"
+        android:layout_height="50dp"
+        android:drawableLeft="@mipmap/ic_company"
+        android:drawablePadding="5dp"
+        android:text="@string/call_support" />
+
+    <View style="@style/Setting_Item_Divider" />
 
 </LinearLayout>

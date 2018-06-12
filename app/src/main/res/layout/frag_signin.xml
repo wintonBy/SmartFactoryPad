@@ -10,7 +10,7 @@
         android:paddingRight="10dp"
         android:background="@mipmap/img_detail"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="120dp">
         <TextView
             android:id="@+id/page_name"
             android:textSize="@dimen/text_x_big"
