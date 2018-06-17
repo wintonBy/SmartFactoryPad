@@ -16,14 +16,18 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.af.smartfactorypad.R;
+import com.af.smartfactorypad.adapter.IndexViewPagerAdapter;
 import com.af.smartfactorypad.constant.Constant;
 import com.af.smartfactorypad.presenter.BasePresenter;
 import com.af.smartfactorypad.ui.fragment.CallFragment;
 import com.af.smartfactorypad.ui.fragment.DeviceFragment;
 import com.af.smartfactorypad.ui.fragment.SignInFragment;
+import com.af.smartfactorypad.ui.fragment.UpdateApkDialog;
 import com.af.smartfactorypad.ui.fragment.UserFragment;
 import com.af.smartfactorypad.ui.fragment.WorkDataFragment;
+import com.af.smartfactorypad.view.DiyScrollViewPager;
 import com.blankj.utilcode.util.TimeUtils;
+import com.winton.bottomnavigationview.NavigationView;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -43,8 +47,13 @@ import butterknife.ButterKnife;
  */
 public class IndexActivity extends BaseActivity {
 
-    @BindView(R.id.rg)
-    RadioGroup mRG;
+    @BindView(R.id.nv_bottom)
+    NavigationView mNV;
+    @BindView(R.id.vp_content)
+    DiyScrollViewPager mVP;
+    private IndexViewPagerAdapter mAdapter;
+
+    private UpdateApkDialog updateFragment;
 
     static UIHandler mUIHandler;
     private FragmentManager fm;
@@ -78,40 +87,43 @@ public class IndexActivity extends BaseActivity {
         }
         ButterKnife.bind(this);
         fm = getSupportFragmentManager();
+        initBottomNavigation();
+        mVP.setCanScroll(false);
+        mVP.setOffscreenPageLimit(4);
+    }
+
+
+    /**
+     * 初始化底部导航栏
+     */
+    private void initBottomNavigation() {
+
+        List<NavigationView.Model> nvItems = new ArrayList<>();
+        nvItems.add(new NavigationView.Model.Builder(R.mipmap.ic_local_check,R.mipmap.ic_local).title(getResources().getString(R.string.sign_in)).build());
+        nvItems.add(new NavigationView.Model.Builder(R.mipmap.ic_data_check,R.mipmap.ic_data).title(getResources().getString(R.string.work_data)).build());
+        nvItems.add(new NavigationView.Model.Builder(R.mipmap.ic_call_check,R.mipmap.ic_call).title(getResources().getString(R.string.call)).build());
+        nvItems.add(new NavigationView.Model.Builder(R.mipmap.ic_me_check,R.mipmap.ic_me).title(getResources().getString(R.string.me)).build());
+
+        mNV.setItems(nvItems);
+        mNV.build();
+        mNV.check(0);
     }
 
     @Override
     protected void initListener() {
         super.initListener();
-        mRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        mNV.setOnTabSelectedListener(new NavigationView.OnTabSelectedListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.rb_sign:
-                        changeFragment(0);
-                        break;
-                    case R.id.rb_work:
-                        changeFragment(1);
-                        break;
-                    case R.id.rb_device:
-                        changeFragment(2);
-                        break;
-                    case R.id.rb_call:
-                        changeFragment(3);
-                        break;
-                }
+            public void selected(int index, NavigationView.Model model) {
+                mVP.setCurrentItem(index,false);
+            }
+
+            @Override
+            public void unselected(int index, NavigationView.Model model) {
+
             }
         });
     }
-
-    private void changeFragment(int index){
-      FragmentTransaction ft = fm.beginTransaction();
-      ft.replace(R.id.fl_content,fragments.get(index));
-      ft.commit();
-    }
-
-
-
 
     @Override
     protected void initData() {
@@ -122,7 +134,8 @@ public class IndexActivity extends BaseActivity {
         fragments.add(WorkDataFragment.newInstance(null));
         fragments.add(CallFragment.newInstance(null));
         fragments.add(UserFragment.newInstance(null));
-        mRG.check(R.id.rb_sign);
+        mAdapter = new IndexViewPagerAdapter(fm,fragments);
+        mVP.setAdapter(mAdapter);
     }
 
 

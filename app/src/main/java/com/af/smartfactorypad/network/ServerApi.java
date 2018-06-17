@@ -1,5 +1,7 @@
 package com.af.smartfactorypad.network;
 
+import com.af.smartfactorypad.network.response.CallerResponse;
+
 import java.util.Map;
 
 import io.reactivex.Flowable;
@@ -22,4 +24,6 @@ public interface ServerApi {
     @POST("{url}")
     Flowable<ResponseBody> executePost(@Path("url")String url ,@QueryMap Map<String,String> params);
 
+    @POST("")
+    Flowable<CallerResponse> callerList(String id);
 }

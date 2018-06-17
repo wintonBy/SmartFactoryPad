@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@drawable/shape_tip"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="240dp"
+        android:layout_height="320dp">
+        <TextView
+            android:gravity="center"
+            android:text="选择呼叫的人"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text_x_normal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+
+</FrameLayout>

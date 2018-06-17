@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'android-aspectjx'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.af.appfram"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -26,8 +27,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.android.support:appcompat-v7:25.1.0'
+    implementation 'com.android.support:appcompat-v7:26+'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:design:26+'
 
     /*view 注解工具*/
     implementation 'com.jakewharton:butterknife:8.6.0'
@@ -55,6 +57,10 @@ dependencies {
     /*工具类*/
     implementation 'com.blankj:utilcode:1.16.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.github.wintonBy:BottomNavigationView:1.0'
+
+
     /*二维码扫描库*/
     compile project(':zxing')
 }

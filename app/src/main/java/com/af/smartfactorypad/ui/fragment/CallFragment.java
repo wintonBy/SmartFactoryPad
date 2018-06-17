@@ -7,9 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.af.smartfactorypad.R;
+import com.af.smartfactorypad.model.Caller;
 import com.zxing.activity.CodeUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +32,13 @@ public class CallFragment extends BaseFragment {
 
     @BindView(R.id.iv_my_code)
     ImageView mIVCode;
+    @BindView(R.id.tv_title)
+    TextView mTVTitle;
+
+
+    private CallListDialog callListDialog;
+    private List<Caller> mCallers;
+    private int dialogId = -1;
 
     public static CallFragment newInstance(Bundle params){
         CallFragment fragment = new CallFragment();
@@ -53,10 +65,13 @@ public class CallFragment extends BaseFragment {
                mIVCode.setImageBitmap(codeImage);
            }
        });
+       mTVTitle.setText("呼叫");
+
     }
 
     @OnClick({R.id.call_manager,R.id.call_tech,R.id.call_logistics,R.id.call_quality,R.id.call_support})
     public void clickCall(View view){
+        String sID = "";
         switch (view.getId()){
             case R.id.call_manager:
                 break;
@@ -69,6 +84,25 @@ public class CallFragment extends BaseFragment {
             case R.id.call_quality:
                 break;
         }
+        if(dialogId == view.getId()){
+            showCallListDialog(sID,false);
+        }else {
+            showCallListDialog(sID,true);
+            dialogId = view.getId();
+        }
+
+    }
+
+    private void showCallListDialog(String id,boolean recreate){
+        if(recreate){
+            callListDialog = null;
+            callListDialog = CallListDialog.createInstance(id);
+        }else {
+            if(callListDialog == null){
+                callListDialog = CallListDialog.createInstance(id);
+            }
+        }
+        callListDialog.show(getFragmentManager(),"callList");
     }
 
 

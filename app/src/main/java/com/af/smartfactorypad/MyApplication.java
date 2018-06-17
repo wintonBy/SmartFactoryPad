@@ -12,6 +12,9 @@ import com.zxing.activity.ZXingLibrary;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 
 /**
@@ -25,6 +28,8 @@ public class MyApplication extends Application {
     private List<WeakReference<Activity>> mActivitys;
 
     public static PermissionUtils permissionInstance;
+
+
 
     @DebugTrace
     @Override
@@ -80,5 +85,4 @@ public class MyApplication extends Application {
             }
         }
     }
-
 }

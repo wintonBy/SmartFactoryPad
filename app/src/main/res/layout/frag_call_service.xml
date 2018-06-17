@@ -4,11 +4,16 @@
     android:layout_height="match_parent"
     android:background="@color/page_color"
     android:orientation="vertical">
-
+    <View
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
     <include layout="@layout/layout_actionbar" />
 
     <ImageView
+        android:background="@android:color/white"
         android:id="@+id/iv_my_code"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="150dp" />
 
