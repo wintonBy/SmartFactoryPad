@@ -1,5 +1,11 @@
 package com.af.smartfactorypad.ui.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+
 import com.af.smartfactorypad.MyApplication;
 import com.af.smartfactorypad.R;
 import com.af.smartfactorypad.presenter.BasePresenter;
@@ -15,10 +21,11 @@ import com.blankj.utilcode.util.PermissionUtils;
  */
 public class SplashActivity extends BaseActivity {
 
+
+
     @Override
     protected void initView() {
         setContentView(R.layout.act_splash);
-        MyApplication.permissionInstance.request();
     }
 
     @Override
@@ -29,6 +36,10 @@ public class SplashActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        toNextView();
+    }
+
+    private void toNextView(){
         getWindow().getDecorView().postDelayed(new Runnable() {
             @Override
             public void run() {

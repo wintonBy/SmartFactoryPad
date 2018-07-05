@@ -3,17 +3,33 @@ apply plugin: 'kotlin-android'
 apply plugin: 'android-aspectjx'
 apply plugin: 'kotlin-android-extensions'
 
+def config = rootProject.ext.android
+
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
     defaultConfig {
-        applicationId "com.af.appfram"
-        minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.lk.sf.wx"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersiontargetSdkVersion
+        versionCode config.versionCode
+        versionCode config.versionCode
+        multiDexEnabled config.multiDexEnabled
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "32bde31bccc1ae2d816b3fe7",
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a'
+        }
+
     }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -60,9 +76,18 @@ dependencies {
 
     implementation 'com.github.wintonBy:BottomNavigationView:1.0'
 
+    /*Glide*/
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+
 
     /*二维码扫描库*/
     compile project(':zxing')
+    /*极光推送*/
+    implementation 'cn.jiguang.sdk:jpush:3.1.1'
+    implementation 'cn.jiguang.sdk:jcore:1.1.9'
+    implementation 'com.android.support:multidex:1.0.0'
+
 }
 repositories {
     mavenCentral()

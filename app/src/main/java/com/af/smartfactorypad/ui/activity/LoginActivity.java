@@ -1,7 +1,12 @@
 package com.af.smartfactorypad.ui.activity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
 
@@ -9,10 +14,12 @@ import com.af.smartfactorypad.R;
 import com.af.smartfactorypad.constant.Constant;
 import com.af.smartfactorypad.contract.LoginContract;
 import com.af.smartfactorypad.presenter.LoginPresenter;
+import com.af.smartfactorypad.view.DialogEx;
 import com.af.smartfactorypad.view.LoadingDialog;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.SnackbarUtils;
 import com.blankj.utilcode.util.StringUtils;
+import com.blankj.utilcode.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +40,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @BindView(R.id.et_password)
     EditText mETPassword;
 
+    private  final int REQ_STORAGE = 0x0001;
     private LoadingDialog mLoading;
 
     /**
@@ -76,6 +84,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 mETPassword.setText(password);
             }
         }
+        checkStoragePermission();
     }
 
     @Override
@@ -121,5 +130,33 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
             return;
         }
         SnackbarUtils.with(getWindow().getDecorView()).setMessage(msg).showError();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode ){
+            case REQ_STORAGE:
+                if(grantResults[0] != PackageManager.PERMISSION_GRANTED){
+                    checkStoragePermission();
+                }
+                break;
+        }
+    }
+
+    /**
+     * 程序必须保证存储权限 否则无法升级
+     */
+    public void checkStoragePermission(){
+        int storagePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if(storagePermission == PackageManager.PERMISSION_GRANTED){
+            return;
+        }
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+            showError("拒绝存储权限将导致不可预知的错误！");
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},REQ_STORAGE);
+        }else {
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},REQ_STORAGE);
+        }
     }
 }
